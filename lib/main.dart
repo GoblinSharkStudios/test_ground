@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 211, 183, 25),
+          backgroundColor: Color.fromARGB(255, 211, 183, 24),
           title: Text("Beer Counter"),
         ),
       ),
