@@ -14,12 +14,15 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 211, 183, 24),
-          title: const Text("Beer Counter"),
+          title: const Center(child: Text("Beer Counter")),
         ),
         body: Center(
           child: ElevatedButton(
             onPressed: () {},
-            child: const Text("pivíčko"),
+            child: Text("pivíčko"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 211, 183, 24),
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
