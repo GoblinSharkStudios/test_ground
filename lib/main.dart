@@ -16,7 +16,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 211, 183, 24),
           title: const Text("Beer Counter"),
         ),
-        body: Center(child: const Text("blablba")),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {},
+            child: const Text("pivíčko"),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color.fromARGB(255, 211, 183, 24),
           items: const [
