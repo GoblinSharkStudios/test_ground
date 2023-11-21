@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int pocetPiv = 0;
-
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,25 +27,48 @@ class _MyAppState extends State<MyApp> {
 
         // telo
         body: Center(
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 211, 183, 24),
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0)),
-              minimumSize: const Size(100, 100), //////// HERE
-            ),
-            onPressed: () {
-              setState(() {
-                pocetPiv++;
-              });
-            },
-            child: Text(
-              pocetPiv.toString(),
-              style: TextStyle(
-                fontSize: (50.0 + pocetPiv),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 211, 183, 24),
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
+                  minimumSize: const Size(100, 100), //////// HERE
+                ),
+                onPressed: () {
+                  setState(() {
+                    pocetPiv++;
+                  });
+                },
+                child: Text(
+                  pocetPiv.toString(),
+                  style: TextStyle(
+                    fontSize: (50.0 + pocetPiv),
+                  ),
+                ),
               ),
-            ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 211, 183, 24),
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0)),
+                  minimumSize: const Size(20, 20), //////// HERE
+                ),
+                onPressed: () {
+                  setState(() {
+                    pocetPiv = 0;
+                  });
+                },
+                child: const Icon(
+                  Icons.restore,
+                  color: Color.fromARGB(255, 105, 91, 12),
+                ),
+              ),
+            ],
           ),
         ),
 
@@ -56,7 +79,7 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               label: ("Settings"),
               icon: Icon(
-                Icons.settings,
+                Icons.home,
                 color: Color.fromARGB(255, 105, 91, 12),
               ),
             ),
@@ -68,6 +91,12 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
       ),
     );
