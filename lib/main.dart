@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  Paint.enableDithering = true;
   runApp(MyApp());
 }
 
@@ -21,60 +22,70 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         //vrchni lista
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 211, 183, 24),
-          title: const Center(child: Text("Beer Counter")),
+          backgroundColor: const Color.fromARGB(255, 7, 10, 22),
+          title: const Center(child: Text("Beers & Cheers")),
         ),
 
         // telo
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 211, 183, 24),
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0)),
-                  minimumSize: const Size(100, 100), //////// HERE
-                ),
-                onPressed: () {
-                  setState(() {
-                    pocetPiv++;
-                  });
-                },
-                child: Text(
-                  pocetPiv.toString(),
-                  style: TextStyle(
-                    fontSize: (50.0 + pocetPiv),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Color(0xff235457),
+              ],
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 211, 183, 24),
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32.0)),
+                    minimumSize: const Size(100, 100), //////// HERE
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      pocetPiv++;
+                    });
+                  },
+                  child: Text(
+                    pocetPiv.toString(),
+                    style: TextStyle(
+                      fontSize: (50.0 + pocetPiv),
+                    ),
                   ),
                 ),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 211, 183, 24),
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0)),
-                  minimumSize: const Size(20, 20), //////// HERE
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32.0)),
+                    minimumSize: const Size(20, 20), //////// HERE
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      pocetPiv = 0;
+                    });
+                  },
+                  child: const Icon(
+                    Icons.restore,
+                    color: Color.fromARGB(255, 105, 91, 12),
+                  ),
                 ),
-                onPressed: () {
-                  setState(() {
-                    pocetPiv = 0;
-                  });
-                },
-                child: const Icon(
-                  Icons.restore,
-                  color: Color.fromARGB(255, 105, 91, 12),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
 
         // spodni lista
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(255, 211, 183, 24),
+          backgroundColor: const Color.fromARGB(255, 7, 10, 22),
           items: const [
             BottomNavigationBarItem(
               label: ("Settings"),
