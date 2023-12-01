@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:stepper_counter_swipe/stepper_counter_swipe.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: const Color.fromARGB(255, 7, 10, 22),
         ),
 
-        // body and background
+        // App body and background
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -41,6 +42,9 @@ class _MyAppState extends State<MyApp> {
 
           //Shadow of slider counter
           alignment: Alignment.center,
+
+//Lottie.asset("assets/Beer.json")
+
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
@@ -52,9 +56,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 BoxShadow(
                   color: Color.fromARGB(255, 255, 255, 255),
-                  spreadRadius: 2,
-                  blurRadius: 18,
-                )
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                ),
               ],
             ),
             //Body of Shadow of slider counter
